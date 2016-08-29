@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Demo</title>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.3/react.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.3/react-dom.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.6.15/browser.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.1/moment.min.js"></script>
+		
+	<link rel="stylesheet" href="styles.css"/>
+	</head>
+	<body>
+		 <h1>Welcome to React!</h1>
+		
+		<div id="render-target"></div>
+		<script type="text/babel">
+		 let Message, MessageLists;
+			Message = React.createClass ({
+				propTypes: {
+					message: React.PropTypes.object.isRequired	
+				},
+				formatTime(time) {
+					return moment(time).format('h:mm A');
+				},
+				
+				render() {
+					return (
+					<li>{this.formatTime(this.props.message.time)} - {this.props.message.text}</li> );
+				}
+			});
+
+			MessageList = React.createClass ({
+				getMessages() {
+					return [
+						{}
+					]
+				}
+			})
+			 
+		 })
+		</script>
+	</body>
+
+</html>
